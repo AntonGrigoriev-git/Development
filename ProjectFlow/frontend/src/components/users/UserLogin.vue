@@ -1,15 +1,18 @@
 <template>
-  <div>
+  <div class="container">
     <h2>Вход</h2>
-    <form @submit.prevent="login">
+    <form @submit.prevent="login" class="form">
       <label for="email">Email:</label>
-      <input type="email" v-model="email" required>
+      <input type="email" v-model="email" required class="input-field">
+      
       <label for="password">Пароль:</label>
-      <input type="password" v-model="password" required>
-      <button type="submit">Войти</button>
-      <p v-if="error" style="color: red;">{{ error }}</p>
+      <input type="password" v-model="password" required class="input-field">
+      
+      <button type="submit" class="submit-button">Войти</button>
     </form>
+    <button @click="goToRegister" class="register-button">Регистрация</button>
   </div>
+  <p v-if="error" class="error-message">{{ error }}</p>
 </template>
 
 <script>
@@ -43,10 +46,13 @@ export default {
         this.error = error.message;
       }
     },
+    goToRegister() {
+      this.$router.push('/register');
+    },
   },
 };
 </script>
 
 <style>
-
+@import '../../assets/styles/common-styles.css';
 </style>

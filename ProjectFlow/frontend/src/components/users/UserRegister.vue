@@ -1,30 +1,33 @@
 <template>
-  <div>
+  <div class="container">
+    <div class="back-button" @click="goBack">
+      &#8592; Назад
+    </div>
     <h2>Регистрация</h2>
-    <form @submit.prevent="register">
+    <form @submit.prevent="register" class="form">
       <label for="last_name">Фамилия:</label>
-      <input type="text" v-model="lastName" required>
+      <input type="text" v-model="lastName" required class="input-field">
 
       <label for="first_name">Имя:</label>
-      <input type="text" v-model="firstName" required>
+      <input type="text" v-model="firstName" required class="input-field">
 
       <label for="middle_name">Отчество:</label>
-      <input type="text" v-model="middleName" required>
+      <input type="text" v-model="middleName" required class="input-field">
 
       <label for="email">Email:</label>
-      <input type="email" v-model="email" required>
+      <input type="email" v-model="email" required class="input-field">
 
       <label for="password">Пароль:</label>
-      <input type="password" v-model="password" required>
+      <input type="password" v-model="password" required class="input-field">
 
       <label for="confirm_password">Подтверждение пароля:</label>
-      <input type="password" v-model="confirmPassword" required>
+      <input type="password" v-model="confirmPassword" required class="input-field">
 
-      <button type="submit">Зарегистрироваться</button>
-      <p v-if="error" style="color: red;">{{ error }}</p>
-      <p v-if="successMessage" style="color: green;">{{ successMessage }}</p>
+      <button type="submit" class="submit-button">Зарегистрироваться</button>
     </form>
   </div>
+  <p v-if="error" class="error-message">{{ error }}</p>
+  <p v-if="successMessage" class="success-message">{{ successMessage }}</p>
 </template>
 
 <script>
@@ -69,6 +72,7 @@ export default {
         }
         const data = await response.json(); // Получаем данные об успешной регистрации
         this.successMessage = data.message; // Устанавливаем сообщение об успешной регистрации
+        this.error = null; // Сбрасываем сообщение об ошибке
 
         // Задержка перед перенаправлением
         setTimeout(() => {
@@ -78,10 +82,13 @@ export default {
         this.error = error.message;
       }
     },
+    goBack() {
+      this.$router.go(-1); // Возврат на предыдущую страницу
+    },
   },
 };
 </script>
 
 <style>
-
+@import '../../assets/styles/common-styles.css';
 </style>
