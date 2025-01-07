@@ -9,8 +9,7 @@ git clone https://github.com/AntonGrigoriev-git/Development.git
 
 **2.** Перейдите в директорию проекта, где находится `manage.py`:
 ```
-cd Development
-cd ProjectFlow
+cd .\Development\ProjectFlow\
 ```
 
 **3.** Создайте виртуальное окружение:
