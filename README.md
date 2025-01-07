@@ -58,7 +58,8 @@ npm run start
 ```
 Если вы сталкиваетесь с проблемами импорта в файлах Django, выполните следующие шаги в Visual Studio Code:
 
-1. Откройте командную палитру, нажав Ctrl + Shift + P (или Cmd + Shift + P на macOS), и выберите "Python: Select Interpreter" (или выберите интерпретатор Python, нажав на виртуальное окружение в правом нижнем углу).
+1. Откройте командную палитру, нажав Ctrl + Shift + P (или Cmd + Shift + P на macOS), и выберите "Python: Select Interpreter"
+   (или выберите интерпретатор Python, нажав на панель состояния в правом нижнем углу).
 2. Переключитесь с Global на Recommended (venv).
 3. Если Recommended не отображается, нажмите "Find" и выберите путь к вашему виртуальному окружению:
    - Для Windows: `.\ProjectFlow\venv\Scripts\python.exe`
